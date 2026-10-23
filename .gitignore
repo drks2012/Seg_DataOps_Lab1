@@ -1,0 +1,7 @@
+.venv/
+.secrets/
+datos/
+salidas/
+referencia.sha256
+__pycache__/
+*.pyc

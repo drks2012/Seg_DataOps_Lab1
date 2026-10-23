@@ -1,0 +1,2 @@
+# Dependencia directa validada con Python 3.12.14
+cryptography==50.0.2
