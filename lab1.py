@@ -23,8 +23,20 @@ CAMPOS = [
 
 def calcular_hash(ruta):
     # TODO 1: devolver el SHA-256 hexadecimal del archivo.
-
-    raise NotImplementedError('TODO 1: calcular_hash')
+    """Recibe una ruta y devuelve SHA-256 hexadecimal sobre los bytes del archivo."""
+    try:
+        # Inicializamos el objeto hash para SHA-256
+        sha256 = hashlib.sha256()
+        
+        # Abrimos el archivo
+        with open(ruta, 'rb') as archivo:
+            while bloque := archivo.read(4096):
+                sha256.update(bloque)
+                
+        # Devolvemos el hash en formato hexadecimal
+        return sha256.hexdigest()
+    except:
+        raise NotImplementedError('TODO 1: calcular_hash')
 
 
 def autorizar(rol, operacion):
@@ -35,14 +47,24 @@ def autorizar(rol, operacion):
 
 def cifrar(valor, fernet):
     # TODO 3: str -> UTF-8 -> encrypt -> texto ASCII.
-
-    
-    raise NotImplementedError('TODO 3: cifrar')
+    try:
+        texto_utf8 = valor.encode("utf-8")
+        texto_encrypt = fernet.encrypt(texto_utf8)
+        texto_ascii = texto_encrypt.decode("ascii")
+        return texto_ascii
+    except:
+        raise NotImplementedError('TODO 3: cifrar')
 
 
 def descifrar(token, fernet):
     # TODO 4: texto ASCII -> decrypt -> texto UTF-8.
-    raise NotImplementedError('TODO 4: descifrar')
+    try:
+        texto_ascii = token.encode("ascii")
+        texto_decrypt = fernet.decrypt(texto_ascii)
+        texto_utf8 = texto_decrypt.decode("utf-8") 
+        return texto_utf8
+    except:
+        raise NotImplementedError('TODO 4: descifrar')
 
 
 def cargar_cifrador():
