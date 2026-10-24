@@ -1,14 +1,14 @@
 # Evidencias del laboratorio 1
 
-Participante: ____________________  Fecha: ____________________
+Participante: __David Alberto Pastrana Acosta__  Fecha: __23 octubre 2026__
 
 Registra lo que observaste realmente. No pegues claves, tokens ni datos recuperados.
 
 | Prueba | Resultado esperado | Resultado observado | Explicación o corrección |
 | --- | --- | --- | --- |
-| Recuperar correo en 1A | True | Por completar | |
-| Comparar original | True | Por completar | |
-| Comparar copia alterada | False | Por completar | |
+| Recuperar correo en 1A | True | Completado | Se recupera correo exitosamente al evaluar el cifrado y descifrado|
+| Comparar original | True | Completado | El hash del archivo pedidos.csv es comparado con el original correctamente |
+| Comparar copia alterada | False | Completado | Se genera un archivo alterado de pedidos.csv y la prueba es exitosa al tener hash diferentes |
 | Ejecutar como operador | 12 filas | Por completar | |
 | Consultar como analista | 3 ciudades y total 10750.00 | Por completar | |
 | Recuperar como operador | Muestra ficticia coincidente | Por completar | |
